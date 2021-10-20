@@ -1,5 +1,6 @@
 var altura = 0
 var largura = 0
+var vidas = 1
 
 /*função utilizada para retornar altura e largura da tela, aplicada na propriedade on resize do body
  retornará os valores em tempo real sempre que esses sejam alterados*/
@@ -17,6 +18,14 @@ function posicaoRandomica(){
 	//remover mosquito anterior, caso exista
 	if(document.getElementById('mosquito')){
 		document.getElementById('mosquito').remove()
+		//verificação de quantidade de vidas. Caso o limite tenha sido atingido, o jogador será redirecionado para a página de Game Over. 
+		if(vidas>3){
+			window.location.href = "fim_de_jogo.html"
+		}
+		else{
+			document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
+			vidas++
+		}
 	}
 	// Gerando valores randômicos que vão de 0 a 1, para que as posições de x e y mudem respeitando o tamanho da tela.
 	//Redução do valor das posições para que a imagem não ultrapasse o tamanho da tela
@@ -39,6 +48,10 @@ function posicaoRandomica(){
 	mosquito.style.top = posY + 'px'
 	mosquito.style.position = 'absolute'
 	mosquito.id = 'mosquito'
+	//removendo o mosquito da tela, após  o clique (utilizado para a primeira aparição na tela)
+	mosquito.onclick = function(){
+		this.remove()
+	}
 	document.body.appendChild(mosquito)
 
 
@@ -52,18 +65,16 @@ function posicaoRandomica(){
 		switch(classe){
 			case 0:
 				return 'mosquito1'
-			break;
 			
 			case 1:
 				return 'mosquito2'
-			break;
 
 			case 2:
 				return 'mosquito3'
-			break;
 		}
 	}
 
+	//classe utilizada para gerar lados aleatórios para a imagem do mosquito
 	function ladoAleatorio(){
 		var classe = Math.floor(Math.random() * 2);
 		console.log(classe)
@@ -71,12 +82,8 @@ function posicaoRandomica(){
 		switch(classe){
 			case 0:
 				return 'ladoA'
-			break;
-			
+
 			case 1:
 				return 'ladoB'
-			break;
-
-
 	}
 }

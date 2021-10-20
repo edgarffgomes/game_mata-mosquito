@@ -12,6 +12,16 @@
 	<!-- Chamada da função 'ajustaTamanhoPalcoJogo', que retornará os valores de altura e largura sempre que eles sofram alteraão -->
 	<body onresize="ajustaTamanhoPalcoJogo()">
 
+		<div class="painel">
+			<div class="vida">
+				<img id ="v1" src="imagens/coracao_cheio.png">
+				<img id="v2" src="imagens/coracao_cheio.png">
+				<img id="v3" src="imagens/coracao_cheio.png">
+			</div>
+
+			<div class="cronometro">Tempo restante: ?</div>
+		</div>
+
 
 
 		<script>
@@ -19,7 +29,7 @@
 
 			setInterval(function(){
 				posicaoRandomica()
-			}, 1000)
+			}, 2000)
 		</script>
 
 
