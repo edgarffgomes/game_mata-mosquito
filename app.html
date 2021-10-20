@@ -19,15 +19,17 @@
 				<img id="v3" src="imagens/coracao_cheio.png">
 			</div>
 
-			<div class="cronometro">Tempo restante: ?</div>
+			<div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
 		</div>
 
 
 
 		<script>
-			
+			//aplicando dinamismo à exibição do tempo, pois o tempo de execução inicial do js é diferente do tempo da página
+			document.getElementById('cronometro').innerHTML = tempo
 
-			setInterval(function(){
+			//executando periodicamente a função para randomizar a posição do mosquito na tela
+			var criaMosquito = setInterval(function(){
 				posicaoRandomica()
 			}, 2000)
 		</script>

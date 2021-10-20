@@ -1,6 +1,7 @@
 var altura = 0
 var largura = 0
 var vidas = 1
+var tempo = 10
 
 /*função utilizada para retornar altura e largura da tela, aplicada na propriedade on resize do body
  retornará os valores em tempo real sempre que esses sejam alterados*/
@@ -11,7 +12,21 @@ function ajustaTamanhoPalcoJogo(){
 
 ajustaTamanhoPalcoJogo(altura, largura)
 
-
+//função para contagem do tempo de jogo
+var cronometro = setInterval(function(){
+	tempo--;
+	if (tempo<0){
+		//Limpando os intervalos após as condições para vitória serem satisfeitas
+		clearInterval(cronometro)
+		clearInterval(criaMosquito)
+		window.location.href = "vitoria.html"
+	}
+	else{
+		//Modificando a exibição do valor do cronômetro dentro da página HTML 
+		document.getElementById('cronometro').innerHTML = tempo
+	}
+	
+}, 1000)
 
 function posicaoRandomica(){
 
