@@ -3,6 +3,22 @@ var largura = 0
 var vidas = 1
 var tempo = 10
 
+var criaMosquitoTempo = 1500
+//variavel nivel recebe o valor após a interrogação na url da página
+var nivel = window.location.search
+nivel = nivel.replace('?', '')
+
+if(nivel === 'facil'){
+	//1500ms
+	criaMosquitoTempo = 1500
+} else if (nivel === 'padrao'){
+	//1000ms
+	criaMosquitoTempo = 1000
+} else if (nivel === 'dificil'){
+	//750ms
+	criaMosquitoTempo = 750
+}
+
 /*função utilizada para retornar altura e largura da tela, aplicada na propriedade on resize do body
  retornará os valores em tempo real sempre que esses sejam alterados*/
 function ajustaTamanhoPalcoJogo(){
@@ -35,6 +51,8 @@ function posicaoRandomica(){
 		document.getElementById('mosquito').remove()
 		//verificação de quantidade de vidas. Caso o limite tenha sido atingido, o jogador será redirecionado para a página de Game Over. 
 		if(vidas>3){
+			clearInterval(cronometro)
+			clearInterval(criaMosquito)
 			window.location.href = "fim_de_jogo.html"
 		}
 		else{
