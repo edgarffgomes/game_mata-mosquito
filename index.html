@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Página inicial</title>
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	   <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+
+	   <script>
+	   	function iniciarJogo(){
+	   		var nivel = document.getElementById('nivel').value
+
+	   		switch(nivel){
+	   			case 'facil':
+
+	   			break;
+
+	   			case 'padrao':
+
+	   			break;
+
+	   			case 'dificil':
+
+	   			break;
+
+	   			default:
+	   			alert('Por favor, selecione um nível válido!')
+	   			return false;
+	   		}
+
+	   	}
+	   </script>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<img src="imagens/game.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<div class="mb-2">
+						<select class="form-control" id="nivel">
+							<option value="">--Selecionar nível--</option>
+							<option value="facil">Fácil</option>
+							<option value="padrao">Padrão</option>
+							<option value="dificil">Difícl</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<button type="button" class="btn btn-primary btn-lg" onclick="iniciarJogo()">Iniciar jogo</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
