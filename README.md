@@ -1,2 +1,26 @@
-# game_mata-mosquito
-Projeto de criação de jogo "mata-mosquito". O jogo consiste em matar uma quantidade de mosquito que aparecem na tela em um determinado período de tempo. Caso ao fim do timer o jogador ainda tenha vidas, será redirecionado para a página de vitória. Caso contrário, será redirecionado à página de derrota. O jogo será implementado por meio de HTML e Javascript.
+# Mata-Mosquito
+
+
+> Status: Completo ✅
+> 
+### Projeto de construção de jogo da velha.
+
+## Funcionalidades implementadas:
++ Monitoramento de cliques
++ Reinicialização da página
++ Temporização surgimento de imagens na tela
++ Redirecionamento para página de vitória/derrota
+
+## Tecnologias utilizadas
+
+<table>
+  <tr>
+    <td> HTML5 </td>
+    <td> CSS3 </td>
+    <td> Javascript </td>
+  </tr>
+</table>
+
+## Link de acesso:
+
+https://edgarffgomes.github.io/game_mata-mosquito/index.html
